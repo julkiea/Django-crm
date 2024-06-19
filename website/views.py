@@ -67,3 +67,9 @@ def customer_record(request, pk):
     else:
         messages.success(request, "Aby zobaczyć tę stronę, musisz być zalogowany")
         return redirect('home')
+    
+def delete_record(request, pk):
+    delete_it = Record.objects.get(id = pk)
+    delete_it.delete()
+    messages.success(request, "Klient usunięty poprawnie.")
+    return redirect('home')
