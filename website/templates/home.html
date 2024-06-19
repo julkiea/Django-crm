@@ -2,14 +2,52 @@
 
 {% block content %}
 
-<div class = "col-md-6 offset-md-3">
+
 
 {% if user.is_authenticated %}
 
-<h1>Witaj</h1>
+<h1>Records...</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Imię i nazwisko</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefon</th>
+      <th scope="col">Adres</th>
+      <th scope="col">Miasto</th>
+      <th scope="col">Kod pocztowy</th>
+      <th scope="col">Utworzono</th>
+      <th scope="col">ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      {% if records %}
+        {% for record in records %}
+        <tr>
+          <td>{{ record.first_name }}
+            {{ record.last_name }}</td>
+            <td>{{ record.email }}</td>
+            <td>{{ record.phone }}</td>
+            <td>{{ record.address }}</td>
+            <td>{{ record.city }}</td>
+            <td>{{ record.zipcode }}</td>
+            <td>{{ record.created_at }}</td>
+            <td>{{ record.id }}</td>
+        </tr>
+        {% endfor %}
+
+      {% endif %}
+
+
+
+  </tbody>
+</table>
+
 
 {% else %}
-
+<div class = "col-md-6 offset-md-3">
 <h1>Zaloguj się</h1>
 <br/>
 <form method="POST" action="{% url 'home' %}">
@@ -28,7 +66,7 @@
         <button type="submit" class="btn btn-secondary">Zaloguj się</button>
 
 </form>
-
+</div>
 {% endif %}
 
 {% endblock %}
