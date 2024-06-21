@@ -8,6 +8,10 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           {% if user.is_authenticated %}
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'add_record' %}">Dodaj klienta</a>
+          </li>
+            
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Wyloguj się</a>
           </li>
             
