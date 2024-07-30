@@ -2,7 +2,11 @@
 This project is a CRM platform built with Django & Python. 
 
 ## Features ✨
-
+- Listing customers
+- Login and register users
+- Adding customers
+- Updating customers' data
+- Deleting customers
 
 ## Installation 🔧
 
