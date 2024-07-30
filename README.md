@@ -13,8 +13,8 @@ This project is a CRM platform built with Django & Python.
 1. Clone the repository:
    
     ```bash
-    git clone
-    cd Django-to-do-site
+    git clone https://github.com/julkiea/Django-crm.git
+    cd Django-crm
     ```
 
 2. Install `virtualenv`:
